@@ -1,4 +1,4 @@
-# CrudGameLibraryAngularJs
+# Crud - Game Library AngularJs
 Frontend de uma biblioteca de jogos, utilizando Angular onde se é possível adicionar, listar, editar e excluir os jogos.
 
 Nota: A aplicação não está utilizando components e services, por conta de ser uma requisição do professor, com o tempo essa aplicação será ajustada e seus arquivos serão melhor distribuidos.
