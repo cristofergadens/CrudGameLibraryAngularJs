@@ -1,0 +1,29 @@
+<h1>Lista de Jogos na Coleção</h1>
+<table class="table-container">
+  <tr>
+    <th>Título</th>
+    <th>Preço</th>
+    <th>Desenvolvedora</th>
+    <th>Gênero</th>
+    <th>Modo de Jogo</th>
+    <th>Plataforma</th>
+    <th>Ano de Lançamento</th>
+  </tr>
+  <tr *ngFor="let jogo of lista_jogos; let i = index">
+    <td>{{jogo.getTitulo()}}</td>
+    <td>{{jogo.getPreco()}}</td>
+    <td>{{jogo.getDevs()}}</td>
+    <td>{{jogo.getGenero()}}</td>
+    <td>{{jogo.getModoJogo()}}</td>
+    <td>{{jogo.getPlataforma()}}</td>
+    <td>{{jogo.getLancamento()}}</td>
+    <td>
+      <button class="side-button" (click)="editar(i)">
+        <mat-icon aria-hidden="false" aria-label="edit">edit</mat-icon>
+      </button>
+      <button class="side-button" (click)="excluir(i)">
+        <mat-icon aria-hidden="false" aria-label="delete">delete</mat-icon>
+      </button>
+    </td>
+  </tr>
+</table>

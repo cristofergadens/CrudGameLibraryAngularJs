@@ -1,4 +1,4 @@
-export class jogo {
+export class Jogo {
   private _titulo : string;
   private _preco : number;
   private _devs : string;
