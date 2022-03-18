@@ -1,4 +1,12 @@
-# Crud - Game Library AngularJs
+# Crud - Game Library AngularJs Update v2
+Após a v1 ser finalizada, a aplicação foi componentizada afim de usar recursos um pouco mais avançados do Angular, como componentes, rotas e services. 
+Com isso, foi possivel deixar o crud em duas telas, a principal que mostra a lista de jogos e a secundaria que é a de Cadastro ou edição de jogos. 
+
+![Animação](https://user-images.githubusercontent.com/36114140/158920706-7c1e82d5-8288-4bb4-aba6-841dbe6a23ee.gif)
+
+
+
+# Crud - Game Library AngularJs v1
 Frontend de uma biblioteca de jogos, utilizando Angular onde se é possível adicionar, listar, editar e excluir os jogos.
 
 Nota: A aplicação não está utilizando components e services, por conta de ser uma requisição do professor, com o tempo essa aplicação será ajustada e seus arquivos serão melhor distribuidos.
@@ -21,7 +29,3 @@ Screenshots:
 3. Rode o comando abaixo
 4. ### `ng s`
 5. No browser, acesse a página `http://localhost:4200/`
-
-# CrudJogos
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
