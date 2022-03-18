@@ -15,7 +15,6 @@ export class Jogo {
       this._modoJogo = modoJogo;
       this._plataforma = plataforma;
       this._lancamento = lancamento;
-
   }
 
   public getTitulo() : string {

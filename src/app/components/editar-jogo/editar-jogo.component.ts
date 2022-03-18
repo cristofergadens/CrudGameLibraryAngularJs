@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Jogo } from 'src/app/models/jogo';  
 import { JogosService } from 'src/app/services/jogos.service';
-import { Jogo } from 'src/app/models/jogo';
 
 @Component({
   selector: 'app-editar-jogo',
@@ -12,6 +12,9 @@ import { Jogo } from 'src/app/models/jogo';
 export class EditarJogoComponent implements OnInit {
   public formEditar: FormGroup;
   private indice: number = -1;
+  public options = new FormControl();
+  public gamemode: string[] = ['Single Player', 'Multiplayer Local', 'Multiplayer Online'];
+  public plataformaLista: string[] = ['console', 'PC', 'Multiplataforma'];
 
   constructor(private _router: Router,
     private _jogoService: JogosService,
@@ -34,13 +37,13 @@ export class EditarJogoComponent implements OnInit {
         this.indice = parametros["indice"];
         let jogo = this._jogoService.getJogo(this.indice);
         this.formEditar = this._formBuilder.group({
-          titulo: [jogo.getTitulo(), [Validators.required]],
-          preco: ["", [Validators.required]],
-          devs: ["", [Validators.required]],
-          genero: ["", [Validators.required]],
-          modoJogo: ["", [Validators.required]],
-          plataforma: ["", [Validators.required]],
-          lancamento: ["", [Validators.required]],
+          titulo: [jogo.getTitulo(), [Validators.required, Validators.minLength(5)]],
+          preco: [jogo.getPreco(), [Validators.required]],
+          devs: [jogo.getDevs(), [Validators.required]],
+          genero: [jogo.getGenero(), [Validators.required]],
+          modoJogo: [jogo.getModoJogo(), [Validators.required]],
+          plataforma: [jogo.getPlataforma(), [Validators.required]],
+          lancamento: [jogo.getLancamento(), [Validators.required]],
         });
       }
     });

@@ -3,8 +3,6 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { Router } from '@angular/router';
 import { Jogo } from 'src/app/models/jogo';
 import { JogosService } from 'src/app/services/jogos.service';
-import { MatSelect } from '@angular/material/select'; 
-
 
 @Component({
   selector: 'app-cadastrar-jogo',
@@ -21,7 +19,7 @@ export class CadastrarJogoComponent implements OnInit {
     private jogoService: JogosService,
     private _formBuilder: FormBuilder) {
     this.formCadastrar = this._formBuilder.group({
-      titulo: ["", [Validators.required]],
+      titulo: ["", [Validators.required , Validators.minLength(5)]],
       preco: ["", [Validators.required]],
       devs: ["", [Validators.required]],
       genero: ["", [Validators.required]],
@@ -49,6 +47,7 @@ export class CadastrarJogoComponent implements OnInit {
   }
 
   public salvar(): void {
+    
     if(this.jogoService.inserirJogo(new Jogo(
       this.formCadastrar.controls["titulo"].value,
       this.formCadastrar.controls["preco"].value,
@@ -63,4 +62,10 @@ export class CadastrarJogoComponent implements OnInit {
       alert("Erro ao salvar jogo");
     }
   }
+
+  public irParaListaDeJogos() : void {
+    this._router.navigate(["/ListaDeJogos"]);
+  }
+
+
 }

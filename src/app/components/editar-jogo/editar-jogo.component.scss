@@ -32,23 +32,8 @@ h1 {
   color:#fff
 }
 
-th{
-  background-color:#eab67669;
-  color: aliceblue;
-  text-transform: capitalize;
-  font-size: 20px;
-  font-style: normal;
-  height: 30px;
-  max-width: 500px;
-}
-
-td{
-  max-width: 500px;
-}
-
 button {
   text-decoration: none;
-  margin-right: 2px;
   border: none;
   cursor: pointer;
 }
@@ -57,38 +42,47 @@ button:hover{
   opacity: 0.8;
 }
 
-.side-button{
-  background-color: #eab67669;
-  color: aliceblue;
-}
-
-.mat-label{
+::ng-deep .mat-select-value-text{
   color: #fff;
   font-size: 20px;
+}
+
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled){
+  color: #29044869;
+}
+
+.mat-label, input{
+  color: #fff;
+  font-size: 20px;
+}
+
+.save-button, .erase-button{
+  text-decoration: none;
+  border: 1px solid rgba(155, 155, 155, 0.425);
+  background-color: #a19382;
+  color: #fff;
+  font-size: 26px;
+  height: 50px;
+  width: 200px;
 }
 
 .save-button{
-  margin-left: 40vw;
-  text-decoration: none;
+  margin-left: 39vw;
   margin-right: 15px;
-  border: 1px solid rgba(155, 155, 155, 0.425);
-  background-color: #a19382;
   color: #fff;
   font-size: 26px;
   height: 50px;
   width: 200px;
 }
 
-.erase-button{
-  text-decoration: none;
-  border: 1px solid rgba(155, 155, 155, 0.425);
-  margin-right: 2px;
-  background-color: #a19382;
-  color: #fff;
-  font-size: 26px;
-  height: 50px;
-  width: 200px;
+.back-button{
+  color:rgb(255, 255, 255);
+  background-color: transparent;
+  position: absolute;
+  top:30px;
+  left:50px;
 }
-input{
-  font-size: 20px;
+
+.back-button:hover{
+  transform: scale(1.5);
 }

@@ -1,3 +1,7 @@
+<button class="back-button" (click)="irParaListaDeJogos()">
+  <mat-icon alt="Voltar" aria-hidden="false" aria-label="delete">arrow_back</mat-icon>
+</button>
+
 <h1>Adicionar novo Jogo a Biblioteca</h1>
 <form [formGroup] = "formCadastrar" (ngSubmit) = "submitForm()">
     <table class="table-add">
@@ -9,7 +13,7 @@
             <small  *ngIf="formCadastrar.controls['titulo'].hasError('required')" 
             style = "color: red;">O titulo é obrigatório.</small>
             <small  *ngIf="formCadastrar.controls['titulo'].hasError('minlength')" 
-            style = "color: red;">O nome deve ter no mínimo cinco caracteres.</small>
+            style = "color: red;">O titulo deve ter no mínimo cinco caracteres.</small>
         </div>
         
         <mat-form-field appearance="fill">
@@ -41,14 +45,14 @@
         
         <mat-form-field appearance="fill">
           <mat-label class="mat-label">Modo de Jogo *</mat-label>
-          <mat-select [formControl]="options" multiple ngDefaultControl = "modoJogo">
+          <mat-select multiple formControlName = "modoJogo">
             <mat-option *ngFor="let option of gamemode" [value]="option">{{option}}</mat-option>
           </mat-select>
         </mat-form-field>
         
         <mat-form-field appearance="fill">
           <mat-label class="mat-label">Plataforma *</mat-label>
-          <mat-select [formControl]="options" multiple ngDefaultControl = "plataforma">
+          <mat-select multiple formControlName = "plataforma">
             <mat-option *ngFor="let option of plataformaLista" [value]="option">{{option}}</mat-option>
           </mat-select>
         </mat-form-field>
@@ -60,6 +64,6 @@
         
         </table>
         <br/>
-        <button class="save-button" (click) = "salvar()">Salvar</button>
-
+        <button class="save-button" type="submit">Salvar</button>
+        <button class="erase-button" type="reset" >Limpar</button>
 </form>

@@ -1,1 +1,65 @@
-<p>editar-produto works!</p>
+<h1>Editar Jogo da Biblioteca</h1>
+<form [formGroup] = "formEditar" (ngSubmit) = "submitForm()">
+<table class="table-add">
+  <mat-form-field appearance="fill">
+    <mat-label class="mat-label">Título</mat-label>
+    <input matInput type="string" formControlName = "titulo">
+  </mat-form-field>
+  <div *ngIf="formEditar.controls['titulo'].touched">
+      <small *ngIf="formEditar.controls['titulo'].hasError('required')" 
+      style = "color: red;">O titulo é obrigatório.</small>
+      <small  *ngIf="formEditar.controls['titulo'].hasError('minlength')" 
+      style = "color: red;">O nome deve ter no mínimo cinco caracteres.</small>
+  </div>
+    
+  <mat-form-field appearance="fill">
+    <mat-label class="mat-label">Preço</mat-label>
+    <input matInput type="number" formControlName = "preco">
+  </mat-form-field>
+  <div *ngIf="formEditar.controls['preco'].touched">
+      <small *ngIf="formEditar.controls['preco'].hasError('required')" 
+      style = "color: red;">O preço é obrigatório.</small>
+  </div>        
+
+  <mat-form-field appearance="fill">
+    <mat-label class="mat-label">Desenvolvedora</mat-label>
+    <input matInput type="string" formControlName = "devs">
+  </mat-form-field>
+  <div *ngIf="formEditar.controls['devs'].touched">
+    <small *ngIf="formEditar.controls['devs'].hasError('required')" 
+    style = "color: red;">É obrigatório informar a empresa Desenvolvedora.</small>
+  </div>
+
+  <mat-form-field appearance="fill">
+    <mat-label class="mat-label">Gênero</mat-label>
+    <input matInput type="string" formControlName = "genero">
+  </mat-form-field>
+  <div *ngIf="formEditar.controls['genero'].touched">
+    <small  *ngIf="formEditar.controls['genero'].hasError('required')" 
+    style = "color: red;">É obrigatório informar o gênero ao qual o jogo pertence.</small>
+  </div>
+        
+  <mat-form-field appearance="fill">
+    <mat-label class="mat-label">Modo de Jogo *</mat-label>
+    <mat-select multiple formControlName = "modoJogo">
+      <mat-option *ngFor="let option of gamemode" [value]="option">{{option}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+        
+  <mat-form-field appearance="fill">
+    <mat-label class="mat-label">Plataforma *</mat-label>
+    <mat-select multiple formControlName = "plataforma">
+      <mat-option *ngFor="let option of plataformaLista" [value]="option">{{option}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+        
+  <mat-form-field appearance="fill">
+    <mat-label class="mat-label">Ano de lançamento *</mat-label>
+    <input matInput type="number" formControlName = "lancamento" >
+  </mat-form-field>
+        
+  </table>
+  <br/>
+  <button class="save-button" type="submit">Salvar</button>
+
+</form>

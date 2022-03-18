@@ -39,6 +39,7 @@ export class ListaDeJogosComponent implements OnInit {
     this._router.navigate(["/CadastrarJogo"]);
   }
 
+
   /*public editar(index : number) : void {
     this.edicao = true;
     this.indice = index;
@@ -49,16 +50,6 @@ export class ListaDeJogosComponent implements OnInit {
     this.modoJogo = this.lista_jogos[index].getModoJogo();
     this.plataforma = this.lista_jogos[index].getPlataforma();
     this.lancamento = this.lista_jogos[index].getLancamento();
-  }
-
-  public limpar(){
-    this.titulo = undefined;
-    this.preco = undefined;
-    this.devs = undefined;
-    this.genero = undefined;
-    this.modoJogo = undefined;
-    this.plataforma = undefined;
-    this.lancamento = undefined;
   }
 */
 }

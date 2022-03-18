@@ -12,18 +12,6 @@
   color: #fff;
 }
 
-.table-add {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  width: 500px;
-  border: 1px solid rgba(155, 155, 155, 0.425);
-  padding: 0 50px;
-  padding-top: 2vh;
-  font-size: 14px;
-  color: #fff;
-}
-
 h1 {
   font-family: 'Poppins', sans-serif;
   padding-top: 30px;
@@ -62,33 +50,14 @@ button:hover{
   color: aliceblue;
 }
 
-.mat-label{
-  color: #fff;
-  font-size: 20px;
-}
-
-.save-button{
-  margin-left: 40vw;
+.pages-button{
   text-decoration: none;
-  margin-right: 15px;
-  border: 1px solid rgba(155, 155, 155, 0.425);
-  background-color: #a19382;
+  background-color: #eab67669;
   color: #fff;
-  font-size: 26px;
-  height: 50px;
-  width: 200px;
-}
-
-.erase-button{
-  text-decoration: none;
-  border: 1px solid rgba(155, 155, 155, 0.425);
-  margin-right: 2px;
-  background-color: #a19382;
-  color: #fff;
-  font-size: 26px;
-  height: 50px;
-  width: 200px;
-}
-input{
+  margin-left: 15px;
   font-size: 20px;
+  height: 35px;
+  width: 280px;
+  font-weight: 700;
+  border-radius: 5px;
 }
