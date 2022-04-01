@@ -10,19 +10,19 @@
     <th>Plataforma</th>
     <th>Ano de Lançamento</th>
   </tr>
-  <tr *ngFor="let jogo of lista_jogos; let i = index">
-    <td>{{jogo.getTitulo()}}</td>
-    <td>{{jogo.getPreco()}}</td>
-    <td>{{jogo.getDevs()}}</td>
-    <td>{{jogo.getGenero()}}</td>
-    <td>{{jogo.getModoJogo()}}</td>
-    <td>{{jogo.getPlataforma()}}</td>
-    <td>{{jogo.getLancamento()}}</td>
+  <tr *ngFor="let jogo of lista_jogos">
+    <td>{{jogo.titulo}}</td>
+    <td>{{jogo.preco}}</td>
+    <td>{{jogo.devs}}</td>
+    <td>{{jogo.genero}}</td>
+    <td>{{jogo.modoJogo}}</td>
+    <td>{{jogo.plataforma}}</td>
+    <td>{{jogo.lancamento}}</td>
     <td>
-      <button class="side-button" (click)="editar(i)">
+      <button class="side-button" (click)="editar(jogo)">
         <mat-icon aria-hidden="false" aria-label="edit">edit</mat-icon>
       </button>
-      <button class="side-button" (click)="excluir(i)">
+      <button class="side-button" (click)="excluir(jogo)">
         <mat-icon aria-hidden="false" aria-label="delete">delete</mat-icon>
       </button>
     </td>

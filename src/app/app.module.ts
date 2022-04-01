@@ -13,6 +13,11 @@ import { ListaDeJogosComponent } from './components/lista-de-jogos/lista-de-jogo
 import { CadastrarJogoComponent } from './components/cadastrar-jogo/cadastrar-jogo.component';
 import { EditarJogoComponent } from './components/editar-jogo/editar-jogo.component';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,11 @@ import { EditarJogoComponent } from './components/editar-jogo/editar-jogo.compon
     BrowserAnimationsModule,
     MatSelectModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
