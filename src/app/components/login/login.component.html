@@ -1,0 +1,30 @@
+<div class="wrapper">
+    <form class="form-principal" [formGroup]="formLogin" (ngSubmit)="submitForm()">
+        <h1 class="form-principal-title">Login</h1>
+        <label class="form-principal-label">Email: </label>
+        <input class="form-principal-input" type="text" formControlName="email"> <br />
+        <div *ngIf="formLogin.controls['email'].touched">
+            <small *ngIf="formLogin.controls['email'].hasError('required')">O email é obrigatório.</small>
+            <small *ngIf="formLogin.controls['email'].hasError('email')">Formato de email invalido</small>
+        </div>
+        <label class="form-principal-label">Senha: </label>
+        <input class="form-principal-input" type="password" formControlName="password"><br />
+        <div *ngIf="formLogin.controls['password'].touched">
+            <small *ngIf="formLogin.controls['password'].hasError('required')">A senha é obrigatoria.</small>
+            <small *ngIf="formLogin.controls['password'].hasError('minlength')">A senha precisa ter no minimo 6
+                caracteres.</small>
+        </div>
+        <button class="form-principal-login-button" type="submit">Log in</button>
+        <div class="form-principal-social-login-buttons">
+            <button class="social-login-button" (click)="logarComGoogleAccount()">
+                <img class="google-icon" src="../../../assets/google.png" alt="google-logo">Fazer login com conta Google
+            </button>
+            <button class="social-login-button" (click)="logarComGoogleAccount()">
+                <img class="google-icon" src="../../../assets/facebook.png" alt="facebook-logo">Fazer login com Facebook
+            </button>
+        </div>
+        <br />
+        <span>Não tem cadastro? </span>
+        <a class="form-principal-msg-cadastrar" routerLink="/cadastro">Clique aqui!</a>
+    </form>
+</div>
