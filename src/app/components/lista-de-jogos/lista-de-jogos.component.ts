@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Jogo } from 'src/app/models/jogo';
+import { ImagemService } from 'src/app/services/imagem.service';
 import { JogoFirebaseService } from 'src/app/services/jogo.firebase.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-lista-de-jogos',
@@ -12,7 +14,10 @@ import { JogoFirebaseService } from 'src/app/services/jogo.firebase.service';
 export class ListaDeJogosComponent implements OnInit {
   public lista_jogos?: Jogo[];
 
-  constructor(private _router: Router, private jogoFirebaseService: JogoFirebaseService) { }
+  constructor(private _router: Router,
+     private jogoFirebaseService: JogoFirebaseService,
+     private usuarioService : UsuarioService) { 
+     }
 
   ngOnInit() {
     this.jogoFirebaseService.getJogos().subscribe(res => {
@@ -45,4 +50,19 @@ export class ListaDeJogosComponent implements OnInit {
   public irParaCadastrarJogo(): void {
     this._router.navigate(["/CadastrarJogo"]);
   }
+
+
+  public logout(){
+    let resultado = confirm("Deseja realmente sair?");
+    if(resultado){
+      this.usuarioService.logout()
+      .then(()=>{
+        this._router.navigate(["/login"]);
+      })
+      .catch(()=>{
+        alert("Erro ao sair da plataforma!");
+      })
+    }
+  }
+
 }

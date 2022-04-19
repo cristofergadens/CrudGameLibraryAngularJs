@@ -8,9 +8,7 @@ import { UsuarioService } from './usuario.service';
 })
 export class UsuarioGuard implements CanActivate {
   constructor(private router: Router,
-    private authService: UsuarioService) {
-
-  }
+    private authService : UsuarioService) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,

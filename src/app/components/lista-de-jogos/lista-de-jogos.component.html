@@ -1,5 +1,7 @@
 <h1>Lista de Jogos na Coleção</h1>
 
+<button class="exit" (click)=logout()>Sair </button> 
+
 <table class="table-container">
   <tr>
     <th>Título</th>
@@ -9,6 +11,7 @@
     <th>Modo de Jogo</th>
     <th>Plataforma</th>
     <th>Ano de Lançamento</th>
+    <th>Imagem</th>
   </tr>
   <tr *ngFor="let jogo of lista_jogos">
     <td>{{jogo.titulo}}</td>
@@ -18,6 +21,8 @@
     <td>{{jogo.modoJogo}}</td>
     <td>{{jogo.plataforma}}</td>
     <td>{{jogo.lancamento}}</td>
+    <td><img src="{{jogo.downloadURL}}"></td>
+    
     <td>
       <button class="side-button" (click)="editar(jogo)">
         <mat-icon aria-hidden="false" aria-label="edit">edit</mat-icon>

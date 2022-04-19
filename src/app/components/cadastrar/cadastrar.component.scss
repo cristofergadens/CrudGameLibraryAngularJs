@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.wrapper {	
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+.form-principal{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    max-width: 350px;
+    padding: 80px 35px 130px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0,0,0,0.1); 
+    color: #fff;
+}
+.form-principal-title{
+    font-size: 60px;
+    margin-bottom: 50px;
+}
+small {
+    color: red;
+}
+.form-principal-label{
+    font-size: 20px; 
+}
+.form-principal-input{
+    display: flex;
+    margin: auto;
+    width: 200px;
+    height: 18px;
+}
+.form-principal-social-login-buttons{
+    margin-left: 40px;
+    color: rgb(255, 255, 255);
+
+}
+.form-principal-login-button, 
+.social-login-button {
+    font-family: 'Poppins', sans-serif;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: transparent; 
+}
+.form-principal-login-button{
+    margin-bottom: 20px;
+    border: 1px grey solid;
+    background-color: rgb(71, 143, 238);
+    color: #fff;
+}
+.social-login-button {
+    color: black;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    
+    /* flex para alinhar conteúdo*/
+    display: flex;
+    text-align: center;
+    align-items: center;
+    
+    .google-icon, 
+    .facebook-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+}
+.form-principal-msg-cadastrar{
+    text-transform: capitalize;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(138, 138, 218);
+}

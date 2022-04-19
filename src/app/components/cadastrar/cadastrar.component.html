@@ -1,1 +1,33 @@
-<p>cadastrar works!</p>
+<div class="wrapper">
+    <form class="form-principal" [formGroup]="formCadastrar" (ngSubmit)="submitForm()">
+        <h1 class="form-principal-title">Sign Up</h1>
+        <label class="form-principal-label">Email: </label>
+        <input class="form-principal-input" type="text" formControlName="email"> <br />
+        <div *ngIf="formCadastrar.controls['email'].touched">
+            <small *ngIf="formCadastrar.controls['email'].hasError('required')">O email é obrigatório.</small>
+            <small *ngIf="formCadastrar.controls['email'].hasError('email')">Formato de email invalido</small>
+        </div>
+        <label class="form-principal-label">Senha: </label>
+        <input class="form-principal-input" type="password" formControlName="password"><br />
+        <div *ngIf="formCadastrar.controls['password'].touched">
+            <small *ngIf="formCadastrar.controls['password'].hasError('required')">A senha é obrigatoria.</small>
+            <small *ngIf="formCadastrar.controls['password'].hasError('minlength')">A senha precisa ter no minimo 6
+                caracteres.</small>
+        </div>
+        <label class="form-principal-label">Confirmar Senha: </label>
+        <input class="form-principal-input" type="password" formControlName="confirmPassword"><br />
+        <div *ngIf="formCadastrar.controls['confirmPassword'].touched">
+            <small *ngIf="formCadastrar.controls['password'].hasError('required')">A senha é
+                obrigatoria.</small>
+            <small *ngIf="formCadastrar.controls['password'].hasError('minlength')">A senha precisa
+                ter no minimo 6 caracteres.</small>
+            <small
+                *ngIf="this.formCadastrar.controls['password'].value!= this.formCadastrar.controls['confirmPassword'].value">As senhas não conferem.</small>
+        </div>
+
+        <button class="form-principal-login-button" type="submit">Cadastrar</button>
+        <br />
+        <span>Já tem cadastro? </span>
+        <a class="form-principal-msg-cadastrar" routerLink="/login">Fazer Login!</a>
+    </form>
+</div>

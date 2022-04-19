@@ -25,14 +25,13 @@ small {
     font-size: 20px; 
 }
 .form-principal-input{
-    text-align: center;
     display: flex;
     margin: auto;
     width: 200px;
     height: 18px;
 }
 .form-principal-social-login-buttons{
-    margin-left: 40px;
+    margin-left: 60px;
     color: rgb(255, 255, 255);
 
 }
@@ -51,6 +50,7 @@ small {
     border: 1px grey solid;
     background-color: rgb(71, 143, 238);
     color: #fff;
+   
 }
 .social-login-button {
     color: black;

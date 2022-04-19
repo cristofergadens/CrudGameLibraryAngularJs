@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Jogo } from 'src/app/models/jogo';
-import { JogosService } from 'src/app/services/jogos.service';
 import { JogoFirebaseService } from 'src/app/services/jogo.firebase.service';
 
 
@@ -81,7 +80,7 @@ export class EditarJogoComponent implements OnInit {
   }
 
   public irParaListaDeJogos(): void {
-    this._router.navigate(["/ListadeJogos"]);
+    this._router.navigate(["/ListaDeJogos"]);
   }
 }
 

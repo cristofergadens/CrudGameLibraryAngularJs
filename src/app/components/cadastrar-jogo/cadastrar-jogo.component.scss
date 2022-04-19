@@ -86,3 +86,12 @@ button:hover{
 .back-button:hover{
   transform: scale(1.5);
 }
+
+input[type = 'file']{
+  border: 1px solid rgba(255, 255, 255, 0.425);
+  border-radius: 5px;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+  padding: 5px 10px;
+}

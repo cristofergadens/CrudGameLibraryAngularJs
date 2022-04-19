@@ -18,7 +18,7 @@
         
         <mat-form-field appearance="fill">
           <mat-label class="mat-label">Preço</mat-label>
-          <input matInput type="number" formControlName = "preco">
+          <input matInput type="price" formControlName = "preco" currencyMask ="preco" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' } ">
         </mat-form-field>
         <div *ngIf="formCadastrar.controls['preco'].touched">
             <small  *ngIf="formCadastrar.controls['preco'].hasError('required')" 
@@ -49,6 +49,10 @@
             <mat-option *ngFor="let option of gamemode" [value]="option">{{option}}</mat-option>
           </mat-select>
         </mat-form-field>
+        <div *ngIf="formCadastrar.controls['modoJogo'].touched">
+            <small  *ngIf="formCadastrar.controls['modoJogo'].hasError('required')" 
+            style = "color: red;">É obrigatório informar o modo de jogo ao qual o jogo pertence.</small>
+        </div>
         
         <mat-form-field appearance="fill">
           <mat-label class="mat-label">Plataforma *</mat-label>
@@ -56,13 +60,31 @@
             <mat-option *ngFor="let option of plataformaLista" [value]="option">{{option}}</mat-option>
           </mat-select>
         </mat-form-field>
+        <div *ngIf="formCadastrar.controls['plataforma'].touched">
+          <small  *ngIf="formCadastrar.controls['plataforma'].hasError('required')" 
+          style = "color: red;">É obrigatório informar a plataforma que o jogo pertence.</small>
+      </div>
         
         <mat-form-field appearance="fill">
           <mat-label class="mat-label">Ano de lançamento *</mat-label>
-          <input matInput type="number" formControlName = "lancamento" >
+          <input matInput type="number" formControlName="lancamento">
         </mat-form-field>
+        <div *ngIf="formCadastrar.controls['lancamento'].touched">
+          <small  *ngIf="formCadastrar.controls['lancamento'].hasError('required')" 
+          style = "color: red;">É obrigatório informar o ano de lançamento do jogo.</small>
+      </div>
+      
+      
+    <input type="file" required id="file" formControlName="downloadURL" class="inputfile">
         
-        </table>
+    <div *ngIf="formCadastrar.controls['lancamento'].touched">
+          <small  *ngIf="formCadastrar.controls['lancamento'].hasError('required')" 
+          style = "color: red;">É obrigatório cadastrar uma imagem.</small>
+      </div>
+      <br />
+        
+</table>
+        
         <br/>
         <button class="save-button" type="submit">Salvar</button>
         <button class="erase-button" type="reset" >Limpar</button>

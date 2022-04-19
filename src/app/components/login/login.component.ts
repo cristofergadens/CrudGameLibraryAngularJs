@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
       this.formLogin.controls['password'].value)
     .then(()=>{
       alert("Login Efetuado com Sucesso!");
-      this._router.navigate(["/ListaDeProdutos"]);
+      this._router.navigate(["/ListaDeJogos"]);
     })
     .catch((error)=>{
       alert("Erro ao efetuar Login, tente novamente!");
@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
     this.usuarioService.loginComGoogleAccount()
     .then(()=>{
       alert("Login Efetuado com Sucesso!");
-      this._router.navigate(["/ListaDeProdutos"]);
+      this._router.navigate(["/ListaDeJogos"]);
     })
     .catch((error)=>{
       alert("Erro ao efetuar Login, tente novamente!");
